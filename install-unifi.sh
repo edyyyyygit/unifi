@@ -8,7 +8,7 @@ UNIFI_SOFTWARE_URL="https://dl.ui.com/unifi/7.2.92/UniFi.unix.zip"
 
 
 # The rc script associated with this branch or fork:
-RC_SCRIPT_URL="https://raw.githubusercontent.com/unofficial-unifi/unifi-pfsense/master/rc.d/unifi.sh"
+RC_SCRIPT_URL="https://raw.githubusercontent.com/edyyyyygit/unifi/050412a54e18d044983e4e7738257452d3e3930c/install-unifi.sh"
 
 CURRENT_MONGODB_VERSION=mongodb42
 
@@ -101,8 +101,7 @@ echo " done."
 echo "Installing required packages..."
 #uncomment below for pfSense 2.2.x:
 #env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg install mongodb openjdk unzip pcre v8 snappy
-env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg add http://pkg.freebsd.org/freebsd:10:x86:64/latest/All/openjdk-7.101.00_1,1.txz
-env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg add http://pkg.freebsd.org/freebsd:10:x86:64/latest/All/snappyjava-1.0.4.1_2.txz
+env ASSUME_ALWAYS_YES=YES
 
 
 fetch ${FREEBSD_PACKAGE_LIST_URL}
@@ -158,7 +157,8 @@ AddPkg libXrender
 AddPkg libinotify
 AddPkg javavmwrapper
 AddPkg java-zoneinfo
-AddPkg openjdk8
+AddPkg http://pkg.freebsd.org/freebsd:10:x86:64/latest/All/openjdk-7.101.00_1,1.txz
+AddPkg http://pkg.freebsd.org/freebsd:10:x86:64/latest/All/snappyjava-1.0.4.1_2.txz
 AddPkg snappyjava
 AddPkg snappy
 AddPkg cyrus-sasl
